@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">class01project</string>
+    <string name="toast_string">这是一个短的提示</string>
 </resources>
