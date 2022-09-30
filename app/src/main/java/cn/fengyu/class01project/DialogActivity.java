@@ -111,5 +111,13 @@ public class DialogActivity extends AppCompatActivity {
 
             }
         });
+
+        // Stu stu1 = new Stu(1,"小明",-1);
+        // Stu stu = new Stu.Builder().name("小明").build();
+
+        // Stu stu = Stu.builder()
+        //         .age(1)
+        //         .name("小明")
+        //         .build();
     }
 }
