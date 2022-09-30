@@ -13,15 +13,22 @@
         <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_linear_layout.xml" value="0.3734375" />
         <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_main.xml" value="0.30641025641025643" />
         <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_main2.xml" value="0.3734375" />
+        <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_menu.xml" value="0.30641025641025643" />
         <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_relative_layout.xml" value="0.3734375" />
         <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_relative_layout1.xml" value="0.3734375" />
         <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_relative_layout2.xml" value="0.3734375" />
         <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/layout/activity_toast.xml" value="0.29444444444444445" />
+        <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/menu/demo_item.xml" value="0.31837606837606836" />
+        <entry key="..\:/Projects/AndroidProjects/class01project/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.256" />
       </map>
     </option>
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="PWA">
+    <option name="enabled" value="true" />
+    <option name="wasEnabledAtLeastOnce" value="true" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android API 32 Platform" project-jdk-type="Android SDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
