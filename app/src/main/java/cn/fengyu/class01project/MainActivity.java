@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         textView2 = findViewById(R.id.textView2);
         textView3 = findViewById(R.id.textView3);
         editText1 = findViewById(R.id.editText1);
-        button.findViewById(R.id.button);
+        button = findViewById(R.id.button);
 
         // 3、使用
         Log.i("MainActivity", button.getText().toString());
