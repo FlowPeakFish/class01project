@@ -32,6 +32,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     testImplementation 'junit:junit:4.13.2'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
