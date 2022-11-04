@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">class01project</string>
     <string name="toast_string">这是一个短的提示</string>
+    <string name="clicked_text">子项被点击了</string>
 </resources>
