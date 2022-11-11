@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import cn.fengyu.class01project.R;
@@ -22,6 +23,7 @@ public class FruitRecyclerViewAdapter extends RecyclerView.Adapter<FruitRecycler
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        View mView;
         ImageView image;
         TextView name;
         TextView price;
@@ -30,6 +32,7 @@ public class FruitRecyclerViewAdapter extends RecyclerView.Adapter<FruitRecycler
         // 保存到ViewHolder中
         public ViewHolder(@NonNull @NotNull View view) {
             super(view);
+            this.mView = view;
             image = view.findViewById(R.id.fruit_id);
             name = view.findViewById(R.id.fruit_name);
             price = view.findViewById(R.id.fruit_price);
@@ -45,6 +48,29 @@ public class FruitRecyclerViewAdapter extends RecyclerView.Adapter<FruitRecycler
                 .inflate(R.layout.fruit_item,
                         recyclerView, false);
         ViewHolder viewHolder = new ViewHolder(view);
+
+        viewHolder.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = viewHolder.getBindingAdapterPosition();
+                Fruit fruit = mFruits.get(position);
+                Toast.makeText(recyclerView.getContext(),
+                                fruit.getName() + " 图片 被点击了", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+
+        viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = viewHolder.getBindingAdapterPosition();
+                Fruit fruit = mFruits.get(position);
+                Toast.makeText(recyclerView.getContext(),
+                                fruit.getName() + " 子项 被点击了", Toast.LENGTH_SHORT)
+                        .show();
+            }
+        });
+
         return viewHolder;
     }
 

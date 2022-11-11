@@ -1,9 +1,11 @@
 package cn.fengyu.class01project;
 
+import android.annotation.SuppressLint;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import cn.fengyu.class01project.adapter.FruitRecyclerViewAdapter;
 import cn.fengyu.class01project.entity.Fruit;
 
@@ -51,8 +53,18 @@ public class FruitRecyclerViewActivity extends AppCompatActivity {
         );
 
         // 6、将适配器加到控件中(子项布局+数据+列表控件)
-        LinearLayoutManager layoutManager = new LinearLayoutManager(
-                FruitRecyclerViewActivity.this);
+
+        // 线性布局
+        // LinearLayoutManager layoutManager =
+        //         new LinearLayoutManager(
+        //         FruitRecyclerViewActivity.this);
+        // layoutManager.setOrientation(RecyclerView.HORIZONTAL);
+
+        // 瀑布流布局
+        StaggeredGridLayoutManager layoutManager=new
+                StaggeredGridLayoutManager(3,
+                StaggeredGridLayoutManager.VERTICAL);
+
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
     }
