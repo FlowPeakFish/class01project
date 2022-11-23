@@ -18,6 +18,12 @@
             android:theme="@style/Theme.Class01project"
             tools:targetApi="31">
         <activity
+                android:name=".MusicPlayerActivity"
+                android:exported="false"/>
+        <activity
+                android:name=".MusicListActivity"
+                android:exported="false"/>
+        <activity
                 android:name=".MusicWelcomeActivity"
                 android:exported="true">
             <intent-filter>

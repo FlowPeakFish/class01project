@@ -53,7 +53,6 @@ public class FruitRecyclerViewActivity extends AppCompatActivity {
         );
 
         // 6、将适配器加到控件中(子项布局+数据+列表控件)
-
         // 线性布局
         // LinearLayoutManager layoutManager =
         //         new LinearLayoutManager(

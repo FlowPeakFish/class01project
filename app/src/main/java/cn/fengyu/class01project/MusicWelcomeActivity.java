@@ -1,5 +1,6 @@
 package cn.fengyu.class01project;
 
+import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.widget.TextView;
@@ -44,6 +45,8 @@ public class MusicWelcomeActivity extends AppCompatActivity {
                         textView.setText((--num) + "");
                         if (num == 0) {
                             timer.cancel();
+                            startActivity(new Intent(MusicWelcomeActivity.this,
+                                    MusicListActivity.class));
                         }
                         break;
                 }
