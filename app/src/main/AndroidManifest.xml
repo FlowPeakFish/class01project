@@ -3,8 +3,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="cn.fengyu.class01project">
 
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
 
@@ -19,12 +19,17 @@
             android:theme="@style/Theme.Class01project"
             tools:targetApi="31">
         <activity
-                android:name=".VideoActivity"
+                android:name=".ViewPagerActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
+
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+                android:name=".VideoActivity"
+                android:exported="true">
         </activity>
         <activity
                 android:name=".MusicPlayerActivity"

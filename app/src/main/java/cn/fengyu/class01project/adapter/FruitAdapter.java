@@ -32,7 +32,9 @@ public class FruitAdapter extends ArrayAdapter<Fruit> {
 
         // 为每个子项加载设定的布局
         if (convertView == null) {
-            view = LayoutInflater.from(getContext()).inflate(R.layout.fruit_item, parent, false);
+            view = LayoutInflater.from(getContext())
+                    .inflate(R.layout.fruit_item,
+                            parent, false);
 
             // 从布局中分别获取图片、名称、价格的对象(控件)
             // image = view.findViewById(R.id.fruit_id);
