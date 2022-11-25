@@ -4,13 +4,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-
-import java.util.ArrayList;
-import java.util.List;
+import androidx.viewpager.widget.ViewPager;
+import cn.fengyu.class01project.adapter.ImageViewPagerAdapter;
 
 public class ViewPagerActivity extends AppCompatActivity {
 
-    private List<View> viewList;
+    private ViewPager viewPager;
     private View page1, page2, page3;
 
     @Override
@@ -18,13 +17,18 @@ public class ViewPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_pager_actitivy);
 
+        viewPager = findViewById(R.id.view_pager_1);
+
         LayoutInflater layoutInflater = getLayoutInflater();
-        View page1 = layoutInflater.inflate(R.layout.page1, null, false);
-        View page2 = layoutInflater.inflate(R.layout.page2, null, false);
-        View page3 = layoutInflater.inflate(R.layout.page3, null, false);
-        viewList = new ArrayList<View>();
-        viewList.add(page1);
-        viewList.add(page2);
-        viewList.add(page3);
+        page1 = layoutInflater.inflate(R.layout.activity_main, null, false);
+        page2 = layoutInflater.inflate(R.layout.activity_frame_layout, null, false);
+        page3 = layoutInflater.inflate(R.layout.page3, null, false);
+
+        ImageViewPagerAdapter adapter = new ImageViewPagerAdapter();
+        adapter.add(page1);
+        adapter.add(page2);
+        adapter.add(page3);
+
+        viewPager.setAdapter(adapter);
     }
 }
