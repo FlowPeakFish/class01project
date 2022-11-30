@@ -4,6 +4,8 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import cn.fengyu.class01project.util.HttpUtil;
+import okhttp3.*;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,23 +25,57 @@ public class HttpActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.tv1);
 
-        HttpUtil.sendHttpRequest("https://www.baidu.com/", new HttpCallbackListener() {
+        //步骤1：创建OkHttpClient类的实例
+        OkHttpClient client = new OkHttpClient();
+        //步骤2：创建Request对象（并设置目标地址、请求方式等）
+        Request request = new Request.Builder()
+                .url("https://www.baidu.com")
+                .build();
+        client.newCall(request).enqueue(new Callback() {
             @Override
-            public void onFinish(String response) {
-                System.out.println(response);
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        textView.setText(response);
-                    }
-                });
+            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+                System.out.println(response.body().string());
             }
-
             @Override
-            public void onError(Exception e) {
+            public void onFailure(@NotNull Call call, @NotNull IOException e) {
                 System.out.println("运行错误：" + e.getMessage());
             }
         });
+
+
+        // new Thread(new Runnable() {
+        //     @Override
+        //     public void run() {
+        //         try {
+        //             String resp = HttpUtil.run("https://www.baidu.com/");
+        //             System.out.println("=================");
+        //             runOnUiThread(()->{
+        //                 textView.setText(resp);
+        //             });
+        //         } catch (IOException e) {
+        //             throw new RuntimeException(e);
+        //         }
+        //     }
+        // }).start();
+
+
+        // HttpUtil.sendHttpRequest("https://www.baidu.com/", new HttpCallbackListener() {
+        //     @Override
+        //     public void onFinish(String response) {
+        //         System.out.println(response);
+        //         runOnUiThread(new Runnable() {
+        //             @Override
+        //             public void run() {
+        //                 textView.setText(response);
+        //             }
+        //         });
+        //     }
+        //
+        //     @Override
+        //     public void onError(Exception e) {
+        //         System.out.println("运行错误：" + e.getMessage());
+        //     }
+        // });
 
         // new Thread(new Runnable() {
         //     @Override
