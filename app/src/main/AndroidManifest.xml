@@ -19,13 +19,17 @@
             android:theme="@style/Theme.Class01project"
             tools:targetApi="31">
         <activity
-                android:name=".FragmentActivity"
+                android:name=".HttpActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+                android:name=".FragmentActivity"
+                android:exported="true">
         </activity>
         <activity
                 android:name=".ViewPagerActivity"
