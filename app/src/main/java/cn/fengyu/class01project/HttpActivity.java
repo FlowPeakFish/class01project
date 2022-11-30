@@ -1,5 +1,6 @@
 package cn.fengyu.class01project;
 
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import cn.fengyu.class01project.util.HttpUtil;
@@ -13,15 +14,25 @@ import java.net.URL;
 
 public class HttpActivity extends AppCompatActivity {
 
+    TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http);
 
-        HttpUtil.sendHttpRequest("https://www.asdfsafsf.com/", new HttpCallbackListener() {
+        textView = findViewById(R.id.tv1);
+
+        HttpUtil.sendHttpRequest("https://www.baidu.com/", new HttpCallbackListener() {
             @Override
             public void onFinish(String response) {
                 System.out.println(response);
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        textView.setText(response);
+                    }
+                });
             }
 
             @Override
