@@ -27,7 +27,7 @@ public class VideoActivity extends AppCompatActivity {
         // vv.setVideoURI(Uri.parse("android.resource://cn.fengyu.class01project/" + R.raw.mhr));
 
         // 方式三：使用在线资源
-        // vv.setVideoURI(Uri.parse("http://vfx.mtime.cn/Video/2019/03/19/mp4/190319222227698228.mp4"));
+        vv.setVideoURI(Uri.parse("http://vfx.mtime.cn/Video/2019/03/21/mp4/190321153853126488.mp4 "));
         vv.setMediaController(new MediaController(VideoActivity.this));
         vv.start();
     }

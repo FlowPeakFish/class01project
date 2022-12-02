@@ -26,7 +26,6 @@ public class HttpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http);
 
-
         String msg = "{\"count\":[7,2,5],\"format\":true,\"id\":3852,\"object\":{\"t\":\"json在线格式化\",\"r\":\"e\"},\"host\":\"json-online.com\"}";
         System.out.println("输入：" + msg);
         try {
