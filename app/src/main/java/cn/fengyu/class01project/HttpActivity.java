@@ -6,6 +6,9 @@ import android.os.Bundle;
 import cn.fengyu.class01project.util.HttpUtil;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,24 +26,65 @@ public class HttpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_http);
 
+
+        String msg = "{\"count\":[7,2,5],\"format\":true,\"id\":3852,\"object\":{\"t\":\"json在线格式化\",\"r\":\"e\"},\"host\":\"json-online.com\"}";
+        System.out.println("输入：" + msg);
+        try {
+            JSONObject jsonObject = new JSONObject(msg);
+            // 数组获取
+            JSONArray counts = jsonObject.getJSONArray("count");
+            for (int i = 0; i < counts.length(); i++) {
+                Integer o = (Integer) counts.get(i);
+                System.out.println(o);
+            }
+            // 对象获取
+            JSONObject jsonObject1 = jsonObject.getJSONObject("object");
+            System.out.println("t："+jsonObject1.getString("t"));
+            System.out.println("r："+jsonObject1.getString("r"));
+            // 布尔值获取
+            System.out.println("format："+jsonObject.getBoolean("format"));
+            // 数字获取
+            System.out.println("id："+jsonObject.getInt("id"));
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
         textView = findViewById(R.id.tv1);
 
-        //步骤1：创建OkHttpClient类的实例
-        OkHttpClient client = new OkHttpClient();
-        //步骤2：创建Request对象（并设置目标地址、请求方式等）
-        Request request = new Request.Builder()
-                .url("https://www.baidu.com")
-                .build();
-        client.newCall(request).enqueue(new Callback() {
+        new Thread(new Runnable() {
             @Override
-            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
-                System.out.println(response.body().string());
+            public void run() {
+
+                OkHttpClient client = new OkHttpClient().newBuilder()
+                        .build();
+                Request request = new Request.Builder()
+                        .url("https://mock.presstime.cn/mock/63871963e7aea00081e02c10/example/test")
+                        .build();
+                try {
+                    Response response = client.newCall(request).execute();
+                    System.out.println(response.body().string());
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
             }
-            @Override
-            public void onFailure(@NotNull Call call, @NotNull IOException e) {
-                System.out.println("运行错误：" + e.getMessage());
-            }
-        });
+        }).start();
+
+        // //步骤1：创建OkHttpClient类的实例
+        // OkHttpClient client = new OkHttpClient();
+        // //步骤2：创建Request对象（并设置目标地址、请求方式等）
+        // Request request = new Request.Builder()
+        //         .url("https://www.baidu.com")
+        //         .build();
+        // client.newCall(request).enqueue(new Callback() {
+        //     @Override
+        //     public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+        //         System.out.println(response.body().string());
+        //     }
+        //     @Override
+        //     public void onFailure(@NotNull Call call, @NotNull IOException e) {
+        //         System.out.println("运行错误：" + e.getMessage());
+        //     }
+        // });
 
 
         // new Thread(new Runnable() {
