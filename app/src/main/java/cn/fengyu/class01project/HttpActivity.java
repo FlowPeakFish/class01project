@@ -1,21 +1,16 @@
 package cn.fengyu.class01project;
 
+import android.os.Bundle;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import cn.fengyu.class01project.util.HttpUtil;
-import okhttp3.*;
-import org.jetbrains.annotations.NotNull;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class HttpActivity extends AppCompatActivity {
 
