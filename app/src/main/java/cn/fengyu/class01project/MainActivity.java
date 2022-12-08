@@ -57,9 +57,9 @@ public class MainActivity extends AppCompatActivity {
                 Uri uri = Uri.parse("tel:10086");
                 Intent it = new Intent(Intent.ACTION_DIAL, uri);
                 startActivity(it);
-
                 // 返回数据给上一个活动
                 // 书P:72
+                button.setText("按钮被点击了");
             }
         });
 

@@ -21,7 +21,7 @@ public class DetailActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
-        int age = intent.getIntExtra("age",8);
+        int age = intent.getIntExtra("age", 8);
 
         datePicker = findViewById(R.id.dataPicker1);
         textView1 = findViewById(R.id.textView1);
